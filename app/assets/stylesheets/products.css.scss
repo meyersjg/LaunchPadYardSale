@@ -1,0 +1,146 @@
+body {
+  border-top: 10px solid #00A9E5;
+}
+section {
+  &.hero {
+    div {
+      &.heroWrapper {
+        padding-top: 60px;
+        text-align: center;
+
+        img {
+          margin: 0 auto;
+        }
+
+        h1 {
+          font-size: 64px;
+          margin-bottom: 60px;
+          margin-top: 0px;
+          color: #00A9E5;
+        }
+
+        p {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  &.productGrid {
+    padding-top: 80px;
+    margin-bottom: 60px;
+
+    div {
+      &.productWrapper {
+        ul {
+          list-style: none;
+          padding-left: 0;
+          li {
+            div {
+              &.productContainer {
+                text-align: center;
+                padding-top: none;
+                margin-bottom: 40px;
+                position: relative;
+
+                &:hover .productOverlay {
+                  display: block;
+                }
+
+                div {
+                  &.productOverlay {
+                    position: absolute;
+                    height: 100%;
+                    width: 95%;
+                    border-radius: 10px;
+                    padding-top: 50%;
+                    background-color: rgba(255, 255, 255, .7);
+                    border: 1px solid gray;
+                    display: none;
+                  }
+                }
+
+                img {
+                  width: auto;
+
+                }
+
+                div {
+                  &.productInfo {
+
+                    h3 {
+                      margin-top: 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.footer {
+    footer {
+      div {
+        &.container {
+          div {
+            &.footerContent {
+              padding-bottom: 30px;
+              padding-right: 120px;
+              text-align: right;
+              a {
+                color: #00A9E5;
+                font-size: 24px;
+                &:hover {
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+div {
+  &.modal {
+    margin-top: 200px;
+  }
+
+  &.wanker {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: #00A9E5;
+    color: #FFF;
+    display: none;
+    font-family: Helvetica, Arial, sans-serif;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2014;
+  }
+
+  .wanker-content {
+    position: relative;
+    margin: 0 auto;
+    padding-top: 100px;
+    text-align: center;
+    width: 80%;
+  }
+
+  .wanker-content h2 {
+    font-size: 3em;
+    line-height: .9em;
+    margin-bottom: 1em;
+  }
+
+  .wanker-content img {
+    border-radius: 15px;
+  }
+}

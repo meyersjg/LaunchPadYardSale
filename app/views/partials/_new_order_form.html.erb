@@ -1,0 +1,19 @@
+<% form_for(@order) do |f| %>
+
+  <%= f.hidden_field :product_id, :value => params[:product_id] if params[:product_id].present? %>
+
+  <%= f.label :full_name %>:
+  <%= f.text_field :full_name %><br/>
+
+  <%= f.label :email %>:
+  <%= f.email_field :email %><br/>
+
+  <%= f.label :creditcard %>:
+  <%= f.number_field :creditcard %><br/>
+
+  <%= f.label :expiration_date %>:
+  <%= f.date_field :expiration_date %><br/>
+
+  <%= f.submit %>
+
+<% end %>
