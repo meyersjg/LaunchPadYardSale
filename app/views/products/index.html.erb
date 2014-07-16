@@ -4,7 +4,7 @@
     <div class="heroWrapper col-md-10 col-md-offset-1">
       <%= image_tag('https://s3-us-west-2.amazonaws.com/launchpadyardsale/lplab.png', :class => "img-responsive") %>
       <h1>Yard Sale!</h1>
-      <p>The guys here at LaunchPad Lab are moving up in the world and making the move to the trendy River North neighborhood. We don't have room for all of our old desks and chairs. Would you kindly purchase our Scandinavian made stuff?</p>
+      <p>The guys here at LaunchPad Lab are moving up in the world and relocating to the trendy River North neighborhood. We don't have room for all of our old desks and chairs. Would you kindly purchase our Scandinavian made stuff?</p>
     </div>
   </section>
 
@@ -15,7 +15,12 @@
           <li>
             <div class="productContainer col-md-3 col-sm-6">
               <div class="productOverlay">
-                <a href="" class="btn btn-primary btn-lg blue-btn" data-toggle="modal" data-target=".bs-modal-sm">Purchase</a>
+                <!-- <a href="" class="btn btn-primary btn-lg blue-btn" data-toggle="modal" data-target=".bs-modal-sm">Purchase</a> -->
+                <!-- <a href="/orders/new" class="btn btn-primary btn-lg blue-btn">Purchase</a> -->
+                <%#= button_to 'Purchase', new_order_path(product_id: @product.id), class: 'btn btn-primary btn-lg blue-btn' %>
+
+              <!-- when the button is clicked it grabs the product_id and passes it to the new order form -->
+
               </div>
               <%= image_tag(product.image_url, :class => "img-responsive") %>
               <div class="productInfo">
@@ -33,17 +38,10 @@
     </div>
   </section>
 
-  <section class="footer row">
-    <footer>
-      <div class="container">
-        <div class="footerContent">
-          <a href="#">Admin</a>
-        </div>
-      </div>
-    </footer>
-  </section>
+  <a href="#" class="scrollToTop"><i class="fa fa-arrow-circle-up"></i></a>
 
-  <div class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+
+  <!-- <div class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
@@ -52,17 +50,17 @@
           </p>
         </div>
         <div class="modal-body">
-          <!-- <form>
+          <form>
             Full Name: <input type="text" name="name"><br>
             Email: <input type="email" name="email" id=""><br>
             Credit Card #: <input type="number" name="cc" id=""><br>
             Expiration Date: <input type="date" name="date" id=""><br>
             <input type="submit" value="Submit">
-          </form> -->
+          </form>
           <%= render "partials/new_order_form"%>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 </div>

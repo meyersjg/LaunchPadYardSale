@@ -1,0 +1,56 @@
+<div class="container">
+
+  <h1>Admin Panel</h1>
+
+  <div class="homeBtn">
+    <a href="/">Homepage</a>
+  </div>
+
+  <div class="adminWrapper col-md-10 col-md-offset-1">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#orderlist" role="tab" data-toggle="tab">All Orders</a></li>
+      <li><a href="#neworder" role="tab" data-toggle="tab">Add Product</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane fade in active" id="orderlist"><div class="ordersWrapper col-md-10 col-md-offset-1">
+
+      <div class="orderHeader">
+        <h1>
+          All Orders
+        </h1>
+      </div>
+
+      <div class="ordersList">
+        <ul>
+          <% @orders.each do |order| %>
+            <li>
+              <div class="orderContainer">
+                  <table>
+                    <tr>
+                      <td>Order_ID: <%= order.id %></td>
+                      <td>Product_ID: <%= order.product_id %></td>
+                      <td>Name: <%= order.full_name %></td>
+                      <td>Email: <%= order.email %></td>
+                      <td>CC#: <%= order.creditcard.truncate(4) %></td>
+                      <td>Expiration Date: <%= order.expiration_date %></td>
+                    </tr>
+                  </table>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+
+    </div>
+
+    </div>
+      <div class="tab-pane fade" id="neworder">
+        <div class="addProductForm">
+          <%= render "partials/add_product_form"%>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -8,18 +8,39 @@
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 </head>
 <body>
 
+  <div class="container">
+    <div class="adminStatus">
+      <% if admin_signed_in? %>
+        Admin Status
+      <% end %>
+    </div>
+  </div>
+
 <%= yield %>
+
+    <div class="signOutLink">
+      <% if admin_signed_in? %>
+       <%= link_to "Admin Panel", orders_url %> | <%= link_to "Sign Out", destroy_admin_session_path, :method => :delete %>
+      <% else %>
+        <div class="adminLogin">
+          <%= link_to "Admin", new_admin_session_path %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
   <div class="wanker" data-wanker>
     <div class="wanker-content">
       <h2>This site is responsive.</h2>
-      <h2>Trust Me.</h2>
       <%= image_tag "http://cdn.elezea.com/gif/responsive.gif" %>
+      <p>Prevent excessive browser resizing and get people back to reading.</p>
+      <p>Download <a href="https://github.com/migreyes/jquery.wanker">jquery.wanker.js on GitHub</a>.</p>
     </div>
   </div>
 

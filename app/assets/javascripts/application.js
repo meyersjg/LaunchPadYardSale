@@ -13,6 +13,26 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-$(function () {
-  $('[data-wanker]').wanker({delay: 1, duration: 1000});
+
+$(document).ready(function(){
+  //Wanker
+  $(function () {
+    $('[data-wanker]').wanker({delay: 2000, duration: 1000});
+  });
+
+  //Check to see if the window is top if not then display button
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 200) {
+      $('.scrollToTop').fadeIn();
+    } else {
+      $('.scrollToTop').fadeOut();
+    }
+  });
+
+  //Click event to scroll to top
+  $('.scrollToTop').click(function(){
+    $('html, body').animate({scrollTop : 0},800);
+    return false;
+  });
 });
+

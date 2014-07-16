@@ -1,0 +1,24 @@
+
+<h1>Add Product</h1>
+
+<%= form_tag(products_url, method: 'post') do %>
+
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name %>
+  </div>
+
+  <div>
+    <%= label_tag :price %><br />
+    <%= text_area_tag :price %>
+  </div>
+
+  <div>
+    <%= label_tag :image_url %><br />
+    <%= text_area_tag :image_url %>
+  </div>
+
+  <div>
+    <%= submit_tag "Add Product" %>
+  </div>
+<% end %>
