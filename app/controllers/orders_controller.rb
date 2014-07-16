@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
 
-  before_filter :authenticate_admin!, :except => [:create]
+  before_filter :authenticate_admin!, :except => [:create, :new]
 
   def index
     @orders = Order.all
@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new
-    @order.product_id = params[:product_id]
+    @order.product_id = product.id
     @order.full_name = params[:full_name]
     @order.email = params[:email]
     @order.creditcard = params[:creditcard]

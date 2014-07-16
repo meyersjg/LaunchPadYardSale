@@ -16,10 +16,7 @@
             <div class="productContainer col-md-3 col-sm-6">
               <div class="productOverlay">
                 <!-- <a href="" class="btn btn-primary btn-lg blue-btn" data-toggle="modal" data-target=".bs-modal-sm">Purchase</a> -->
-                <!-- <a href="/orders/new" class="btn btn-primary btn-lg blue-btn">Purchase</a> -->
-                <%#= button_to 'Purchase', new_order_path(product_id: @product.id), class: 'btn btn-primary btn-lg blue-btn' %>
-
-              <!-- when the button is clicked it grabs the product_id and passes it to the new order form -->
+                <%= button_to 'Purchase', "/orders/new", class: 'btn btn-primary btn-lg blue-btn' %>
 
               </div>
               <%= image_tag(product.image_url, :class => "img-responsive") %>
@@ -41,7 +38,7 @@
   <a href="#" class="scrollToTop"><i class="fa fa-arrow-circle-up"></i></a>
 
 
-  <!-- <div class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
@@ -50,17 +47,27 @@
           </p>
         </div>
         <div class="modal-body">
-          <form>
-            Full Name: <input type="text" name="name"><br>
-            Email: <input type="email" name="email" id=""><br>
-            Credit Card #: <input type="number" name="cc" id=""><br>
-            Expiration Date: <input type="date" name="date" id=""><br>
-            <input type="submit" value="Submit">
-          </form>
-          <%= render "partials/new_order_form"%>
+
+          <%= form_tag(orders_url, method: 'post') do %>
+
+            <%= label_tag :full_name %>:
+            <%= text_field_tag :full_name %><br/>
+
+            <%= label_tag :email %>:
+            <%= email_field_tag :email %><br/>
+
+            <%= label_tag :creditcard %>:
+            <%= text_field_tag :creditcard %><br/>
+
+            <%= label_tag :expiration_date %>:
+            <%= date_field_tag :expiration_date %><br/>
+
+          <%= submit_tag "Submit Order" %>
+        <% end %>
+
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
 </div>

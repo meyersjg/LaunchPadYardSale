@@ -4,7 +4,7 @@
     <h1>Checkout</h1>
 
     <%= form_tag(orders_url, method: 'post') do %>
-      <%= hidden_field_tag :product_id, :value => @product.id %>
+      <%= hidden_field_tag :product_id, :value => params[:product_id] %>
 
       <%= label_tag :full_name %>:
       <%= text_field_tag :full_name %><br/>
