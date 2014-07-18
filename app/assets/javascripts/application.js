@@ -15,6 +15,16 @@
 //= require_tree .
 
 $(document).ready(function(){
+
+  //Position intro fixed after scroll
+  //  $(window).scroll(function(){
+  //     if ($(this).scrollTop() > 282 ) {
+  //         $('#intro').addClass('fixed');
+  //     } else {
+  //         $('intro').removeClass('fixed');
+  //     }
+  // });
+
   //Wanker
   $(function () {
     $('[data-wanker]').wanker({delay: 2000, duration: 1000});
@@ -22,7 +32,7 @@ $(document).ready(function(){
 
   //Check to see if the window is top if not then display button
   $(window).scroll(function(){
-    if ($(this).scrollTop() > 200) {
+    if ($(this).scrollTop() > 700) {
       $('.scrollToTop').fadeIn();
     } else {
       $('.scrollToTop').fadeOut();

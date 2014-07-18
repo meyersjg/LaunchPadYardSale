@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
 
-    # render "partials/_new_order_form.html.erb"
   end
 
   def new
@@ -17,6 +16,13 @@ class ProductsController < ApplicationController
     @product.save
 
     redirect_to orders_url
+  end
+
+  def destroy
+    @product = Product.find_by(id: params[:id])
+    @product.destroy
+
+    redirect_to root_url, notice: "Order placed!"
   end
 
 
