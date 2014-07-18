@@ -23,7 +23,7 @@
 
       <div class="ordersList">
         <ul>
-          <% @orders.each.sort_by(:product_id) do |order| %>
+          <% @orders.each do |order| %>
             <li>
               <div class="orderContainer">
                   <table>
