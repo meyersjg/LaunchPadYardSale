@@ -1,3 +1,5 @@
+
+
 Product.create(name: 'Ikea Vilgot', price: 50, image_url: 'https://s3-us-west-2.amazonaws.com/launchpadyardsale/vilgot.JPG')
 Product.create(name: 'Ikea Vilgot', price: 50, image_url: 'https://s3-us-west-2.amazonaws.com/launchpadyardsale/vilgot.JPG')
 Product.create(name: 'Ikea Vilgot', price: 50, image_url: 'https://s3-us-west-2.amazonaws.com/launchpadyardsale/vilgot.JPG')

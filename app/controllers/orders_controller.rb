@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
     @order.creditcard = params[:creditcard]
     @order.expiration_date = params[:expiration_date]
 
-    @order.save
+    @order.product.destroy if @order.save
 
     redirect_to root_url, notice: "Order submitted successfully!"
 
