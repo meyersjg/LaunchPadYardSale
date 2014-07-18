@@ -13,7 +13,7 @@
     </ul>
 
     <div class="tab-content">
-      <div class="tab-pane fade in active" id="orderlist"><div class="ordersWrapper col-md-10 col-md-offset-1">
+      <div class="tab-pane fade in active" id="orderlist"><div class="ordersWrapper col-md-12">
 
       <div class="orderHeader">
         <h1>
@@ -23,7 +23,7 @@
 
       <div class="ordersList">
         <ul>
-          <% @orders.each do |order| %>
+          <% @orders.each.sort_by(:product_id) do |order| %>
             <li>
               <div class="orderContainer">
                   <table>
