@@ -2,8 +2,8 @@ Code challenge for LaunchPad Lab
 
 LaunchPadYardSale is a simple app that allows LaunchPad to sell their old furniture.
 
-I decided to add three models: Product, Order, and Admin. An Order belongs_to a Product and a Product has_one Order. These two models are associated by product_id as the foreign key. There is no users model- all of the buyers information is tied to an instance of Order.
+I created three models: Product, Order, and Admin. An Order belongs_to a Product and a Product has_one Order. These two models are associated by product_id as the foreign key. There is no users model- all of the buyers information is tied to an instance of Order.
 
-There are only four screens in this app. An index of all of the products LaunchPad has for sale (homepage), a new order screen, the admin login screen, and the admin dashboard.
+There are only four screens in this app. An index of all of the products LaunchPad has for sale (homepage), a new order screen, the admin login screen, and the admin dashboard. There are two tabs on the admin dashboard: All Orders and Add Product. All Orders displays all of the orders that have been placed. Add Product is a form that adds a new product to the index.
 
-Originally I wrote a method in the Order model
+The product_id is passed to the new order form via the params hash. Once the order is placed, the product corresponding to that product_id gets destroyed. This follows the assumption that every product on the products#index is a one-off product and can only be purchased once.
