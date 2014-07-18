@@ -1,1 +1,9 @@
 Code challenge for LaunchPad Lab
+
+LaunchPadYardSale is a simple app that allows LaunchPad to sell their old furniture.
+
+I decided to add three models: Product, Order, and Admin. An Order belongs_to a Product and a Product has_one Order. These two models are associated by product_id as the foreign key. There is no users model- all of the buyers information is tied to an instance of Order.
+
+There are only four screens in this app. An index of all of the products LaunchPad has for sale (homepage), a new order screen, the admin login screen, and the admin dashboard.
+
+Originally I wrote a method in the Order model
