@@ -20,7 +20,7 @@
   <section class="productGrid row">
     <div class="productWrapper col-md-10 col-md-offset-1">
       <ul>
-        <% @products.each do |product| %>
+        <% @products.where(is_ordered: false).each do |product| %>
           <li>
             <div class="productContainer col-md-3 col-sm-6">
               <div class="productOverlay" style="height: 272px;">

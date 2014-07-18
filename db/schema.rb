@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713225352) do
+ActiveRecord::Schema.define(version: 20140718005548) do
 
   create_table "admins", force: true do |t|
     t.string   "email",              default: "", null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20140713225352) do
     t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_ordered", default: false
   end
 
 end
